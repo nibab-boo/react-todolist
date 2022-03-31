@@ -49,12 +49,6 @@ function App() {
     }
   ]); 
 
-  const onSubmit = (todo) => {
-
-    setTodos([...todos, todo])
-    localStorage.setItem("todos", JSON.stringify(todos));
-
-  }
   useEffect(() => {
     const todosList = localStorage.getItem("todos");
     if ( !todosList || !todosList.length ) {
@@ -65,6 +59,13 @@ function App() {
     }
   }, []);
 
+
+  
+  const onSubmit = (todo) => {
+    todos.push(todo)
+    localStorage.setItem("todos", JSON.stringify(todos));
+    setTodos(JSON.parse(localStorage.getItem("todos")));
+  }
   // before submit 
   const beforeSubmit = (e) => {
     e.preventDefault();
@@ -109,7 +110,11 @@ function App() {
             <input type="submit" value="add"></input>
           </div>
         </Form>
-        < Cards todos= { todos } onDone={ clickDone } onDelete={ clickDelete }/>
+        { todos.length > 0 ? (
+          < Cards todos= { todos } onDone={ clickDone } onDelete={ clickDelete }/>
+        ) : (
+          "No TODOs to show."
+        )}
       </ToDos>
     </MainContainer>
   );
