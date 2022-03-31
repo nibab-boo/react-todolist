@@ -1,0 +1,24 @@
+.card-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: blue;
+  margin: 4px auto;
+  /*  border-radius: 16px; */
+  
+  
+}
+.card-box h4 {
+  margin: 0;
+}
+.card-box p {
+  margin: 0;
+  font-size: .8em;
+}
+.card-box svg{
+  background: white;
+  padding: 16px 8px;
+}
+.card-box svg:hover {
+  background-color: beige;
+}

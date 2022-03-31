@@ -2,6 +2,11 @@ import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+
+// components
+import Header from "./components/Header"
+import Cards from "./components/Cards"
+
 const MainContainer = styled.div`
   width: 100vw;
   height: 100vh;
@@ -15,96 +20,100 @@ const ToDos = styled.div`
   padding: 16px;
 
 `
-
-const CardBox = styled.div`
-  height: 300px;
-  background: red;
-  overflow-y: hidden;
+const Form = styled.form`
+  padding: 0 24px 24px 0;
+  .input-box {
+    padding: 4px 0;
+  }
+  label {
+    display: block;
+  }
+  input {
+    width: 100%;
+  }
+  
 `
-const Card = styled.div`
-  padding: 16px;
-  font-size: 1.3em;
-  font-weight: bold;  
-  display: flex;
-  justify-content: space-between;
-  background: blue;
-
-`
-
 
 function App() {
   // useEffect to get access to local Storages
-  const [todos, setTodos] = useState([]);
+  const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
+  const [todos, setTodos] = useState([{
+      title: "Take dog out for walk",
+      done: true,
+      date: "Tomorrow Morning"
+    },{
+      title: "Date night",
+      done: false,
+      date: "Tomorrow Night"
+    }
+  ]); 
 
+  const onSubmit = (todo) => {
+
+    setTodos([...todos, todo])
+    localStorage.setItem("todos", JSON.stringify(todos));
+
+  }
   useEffect(() => {
     const todosList = localStorage.getItem("todos");
     if ( !todosList || !todosList.length ) {
       localStorage.setItem("todos", "[]");
-      setTodos("happy")
     } else {
       console.log(todosList);
       setTodos(JSON.parse(todosList));
     }
   }, []);
 
+  // before submit 
+  const beforeSubmit = (e) => {
+    e.preventDefault();
+    // console.log(  );
+    onSubmit({title, date, done: false});
+    setTitle("");
+    setDate("");
+  }
+
+  // clicking done
+  const clickDone = (data) => {
+    todos.forEach((todo) => {
+      if (todo.title === data.title) todo.done = true
+    })
+    localStorage.setItem("todos", JSON.stringify(todos));
+    setTodos(JSON.parse(localStorage.getItem("todos")));
+  }
+
+  // clicking delete
+  const clickDelete = (data) => {
+    todos.splice(todos.indexOf(data), 1);
+    console.log(todos);
+    localStorage.setItem("todos", JSON.stringify(todos));
+    setTodos(JSON.parse(localStorage.getItem("todos")));
+  }
+
+
   return (
     <MainContainer>
       <ToDos>
-        <h1>Todos list</h1>
-        <CardBox>
-          <Card>
-            Hello
-            <div>
-              <button>del</button>
-              <button>done</button>
-            </div>
-          </Card>
-          <Card>
-            Hello
-            <div>
-              <button>del</button>
-              <button>done</button>
-            </div>
-          </Card>
-          <Card>
-            Hello
-            <div>
-              <button>del</button>
-              <button>done</button>
-            </div>
-          </Card>
-          <Card>
-            Hello
-            <div>
-              <button>del</button>
-              <button>done</button>
-            </div>
-          </Card>
-          <Card>
-            Hello
-            <div>
-              <button>del</button>
-              <button>done</button>
-            </div>
-          </Card>
-          <Card>
-            Hello
-            <div>
-              <button>del</button>
-              <button>done</button>
-            </div>
-          </Card>
-          <Card>
-            Hello
-            <div>
-              <button>del</button>
-              <button>done</button>
-            </div>
-          </Card>
-        </CardBox>
+        < Header />
+        <Form onSubmit={ beforeSubmit }>
+          <div className="input-box">
+            <label  htmlFor="title">title</label>
+            <input type="text" name="title" value={title} onChange={(e)=> setTitle(e.target.value)}></input>
+          </div>
+          <div className="input-box">
+            <label  htmlFor="title">Date</label>
+            <input type="datetime-local" name="date" value={date} onChange={(e)=> setDate(e.target.value)} value={date}></input>
+          </div>
+          <div style={{textAlign: "center"}}>
+            <input type="submit" value="add"></input>
+          </div>
+        </Form>
+        < Cards todos= { todos } onDone={ clickDone } onDelete={ clickDelete }/>
       </ToDos>
     </MainContainer>
   );
 }
+
 
 export default App;
