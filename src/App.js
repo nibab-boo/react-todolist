@@ -64,7 +64,7 @@ function App() {
     if (data.done) {
       deleteTodo(data);
     } else {
-      if (window.confirm("You have not completed the task.  to delete it?")) {
+      if (window.confirm("You have not completed the task. Do you want to delete it?")) {
         deleteTodo(data);
       } else {
         alert("That was close. Phew!!");
@@ -79,11 +79,11 @@ function App() {
       <div className='to-dos'>
         < Header />
         <Routes>
-            <Route path="/add" element={ < Form
+            <Route path="/react-todolist/add" element={ < Form
               submitTodo= {onSubmit}
             />
             }/>
-          <Route path="/" exact element={
+          <Route path="/react-todolist/" exact element={
             <>
               { todos.length > 0 ? (
                 < Cards todos= { todos } onDone={ clickDone } onDelete={ clickDelete }/>
