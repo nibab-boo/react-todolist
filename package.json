@@ -1,7 +1,7 @@
 {
   "name": "react-todolist",
   "version": "0.1.0",
-  "homepage": "https://nibab-boo.github.io/",
+  "homepage": "https://nibab-boo.github.io/react-todolist/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
