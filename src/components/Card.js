@@ -1,7 +1,7 @@
 // import { FaCheck } from "react-icons/fa";
 // import { FaTrash } from "react-icons/fa";
 // import { useState } from 'react';
-import "./../styles/card.scss"
+import "../styles/card.scss"
 // styled components
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
