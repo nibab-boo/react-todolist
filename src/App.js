@@ -7,7 +7,7 @@ import Header from "./components/Header"
 import Cards from "./components/Cards"
 import Form from './components/Form';
 // import styling
-import './styles/App.scss'
+import './styles/App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -79,11 +79,11 @@ function App() {
       <div className='to-dos'>
         < Header />
         <Routes>
-            <Route path="/add" element={ < Form
+            <Route path="/react-todolist/add" element={ < Form
               submitTodo= {onSubmit}
             />
             }/>
-          <Route path="/" exact element={
+          <Route path="/react-todolist/" exact element={
             <>
               { todos.length > 0 ? (
                 < Cards todos= { todos } onDone={ clickDone } onDelete={ clickDelete }/>

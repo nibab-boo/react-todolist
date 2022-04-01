@@ -16,10 +16,10 @@ const Header = () => {
   return (
     <MainHeader>
       <h1>TODO List</h1>
-      { location.pathname === "/" ? (
-        <Link className='add-close' to="/add">Add</Link>
+      { location.pathname === "/react-todolist/" ? (
+        <Link className='add-close' to="/react-todolist/add">Add</Link>
         ) : (  
-          <Link className='add-close' to="/">Close</Link>
+          <Link className='add-close' to="/react-todolist/">Close</Link>
         )
       }
     </MainHeader>
