@@ -1,13 +1,11 @@
 import { FaCheck } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa";
 // import { useState } from 'react';
-import "./../styles/card.css"
+import "./../styles/card.scss"
 // styled components
  
 
 const Card = ({ todo, onDone, onDelete }) => {
-
-
   return (
     <div className={`card-box ${todo.done ? "done" : ""}`}>
       <div className="card-info">
@@ -19,7 +17,7 @@ const Card = ({ todo, onDone, onDelete }) => {
           < FaCheck data-type="done" style={{ }} onClick={ ()=> onDone(todo) } />
           ) 
         }
-        < FaTrash data-type="delete" style={{ color: "red", marginLeft: "4px"}} onClick={ ()=> onDelete(todo) } />
+        < FaTrash data-type="delete" style={{ color: "red", marginLeft: "0px"}} onClick={ ()=> onDelete(todo) } />
     </div>
   );
 };

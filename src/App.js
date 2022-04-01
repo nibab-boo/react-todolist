@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -6,22 +6,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./components/Header"
 import Cards from "./components/Cards"
 import Form from './components/Form';
+// import styling
+import './styles/App.scss'
 
-const MainContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
-const ToDos = styled.div`
-  width: 20vw;
-  background: lightblue;
-  padding: 16px;
-  border-radius: 20px;
-  min-height: 400px;
-
-`
 
 
 function App() {
@@ -77,8 +64,8 @@ function App() {
 
   return (
     <Router>
-    <MainContainer>
-      <ToDos>
+    <div className='main-container'>
+      <div className='to-dos'>
         < Header />
         <Routes>
             <Route path="/add" element={ < Form
@@ -95,8 +82,8 @@ function App() {
             </>
           }/>
         </Routes>
-      </ToDos>
-    </MainContainer>
+      </div>
+    </div>
     </Router>
   );
 }

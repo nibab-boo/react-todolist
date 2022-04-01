@@ -5,11 +5,17 @@
   /* border: 2px solid black; */
   margin: 4px auto;
   /*  border-radius: 16px; */ 
-  background-color: rgb(142, 153, 250);
+  border-radius: 8px;
+  background-color: #0968f6;
+  transition: all 0.4s;
+  &:hover {
+    transform: scale(1.03, 1.03);
+  }
 }
 
 .card-box.done {
-  background-color: yellow;
+  background-color: #85F4FF;
+  text-decoration: line-through;
 }
 .card-box .card-info {
   padding: 0px 12px;
@@ -23,17 +29,17 @@
   font-size: .8em;
 }
 .card-box svg{
-  background: yellow;
+  // background: #85F4FF;
+  background-color: #EFFFFD;
+  border-radius: 6px;
   padding: 12px 8px;
   margin: 4px;
   color: black;
+  &:hover {
+    background-color:  #B8FFF9;
+  }
 }
 .card-box.done svg{
-  background: rgb(142, 153, 250);
+  // background: rgb(142, 153, 250);
 }
-.card-box svg:last-child {
-  margin-left: 0;
-}
-.card-box svg:hover {
-  background-color:  white;
-}
+
