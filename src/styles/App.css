@@ -1,0 +1,45 @@
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EFFFFD;
+}
+.form-box {
+  padding: 0 24px 24px 0;
+}
+.input-box label {
+  display: block;
+}
+.input-box input {
+  width: 300px;
+}
+.input-box {
+  padding: 4px 0;
+  background-color: red;
+  width: 300px;
+}
+.to-dos {
+  width: 20vw;
+  background: #42C2FF;
+  padding: 16px;
+  border-radius: 20px;
+  min-height: 400px;
+
+}
+.add-close {
+  font-size: 1.2em;
+  font-weight: bold;
+  background: white;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  line-height: 100%;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.add-close:hover {
+  background-color: #85F4FF;
+  
+}
