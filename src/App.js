@@ -79,11 +79,11 @@ function App() {
       <div className='to-dos'>
         < Header />
         <Routes>
-            <Route path="/react-todolist/add" element={ < Form
+            <Route path="/add" element={ < Form
               submitTodo= {onSubmit}
             />
             }/>
-          <Route path="/react-todolist/" exact element={
+          <Route path="/" exact element={
             <>
               { todos.length > 0 ? (
                 < Cards todos= { todos } onDone={ clickDone } onDelete={ clickDelete }/>
