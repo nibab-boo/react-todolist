@@ -18,6 +18,8 @@ const ToDos = styled.div`
   width: 20vw;
   background: lightblue;
   padding: 16px;
+  border-radius: 20px;
+  min-height: 400px;
 
 `
 const Form = styled.form`

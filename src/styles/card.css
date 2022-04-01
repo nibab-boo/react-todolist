@@ -1,12 +1,19 @@
 .card-box {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  background: blue;
+  /* border: 2px solid black; */
   margin: 4px auto;
-  /*  border-radius: 16px; */
-  
-  
+  /*  border-radius: 16px; */ 
+  background-color: rgb(142, 153, 250);
+}
+
+.card-box.done {
+  background-color: yellow;
+}
+.card-box .card-info {
+  padding: 0px 12px;
+  margin-right: auto;
 }
 .card-box h4 {
   margin: 0;
@@ -16,9 +23,17 @@
   font-size: .8em;
 }
 .card-box svg{
-  background: white;
-  padding: 16px 8px;
+  background: yellow;
+  padding: 12px 8px;
+  margin: 4px;
+  color: black;
+}
+.card-box.done svg{
+  background: rgb(142, 153, 250);
+}
+.card-box svg:last-child {
+  margin-left: 0;
 }
 .card-box svg:hover {
-  background-color: beige;
+  background-color:  white;
 }

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Card from './Card';
 // style
 const CardBox = styled.div`
-  min-height: 300px;
+  min-height: 100px;
 `
 
 const Cards = ({ todos, onDone, onDelete }) => {
