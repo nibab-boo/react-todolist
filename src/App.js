@@ -53,12 +53,23 @@ function App() {
     setTodos(JSON.parse(localStorage.getItem("todos")));
   }
 
-  // clicking delete
-  const clickDelete = (data) => {
+  const deleteTodo = (data) => {
     todos.splice(todos.indexOf(data), 1);
     console.log(todos);
     localStorage.setItem("todos", JSON.stringify(todos));
     setTodos(JSON.parse(localStorage.getItem("todos")));
+  }
+  // clicking delete
+  const clickDelete = (data) => {
+    if (data.done) {
+      deleteTodo(data);
+    } else {
+      if (window.confirm("You have not completed the task.  to delete it?")) {
+        deleteTodo(data);
+      } else {
+        alert("That was close. Phew!!");
+      }
+    }
   }
 
 

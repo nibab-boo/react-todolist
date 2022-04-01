@@ -12,11 +12,14 @@ const Form = ({ submitTodo }) => {
   const beforeSubmit = (e) => {
     e.preventDefault();
     // console.log(  );
-    submitTodo({title, date, done: false});
-    navigate(-1);
-    console.log("working");
-    setTitle("");
-    setDate("");
+    if (title) {
+      submitTodo({title, date, done: false});
+      navigate(-1);
+      setTitle("");
+      setDate("");
+    } else {
+      alert("Enter title");
+    }
   }
 
   return (
