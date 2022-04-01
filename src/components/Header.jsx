@@ -6,10 +6,8 @@ const MainHeader = styled.div`
   display:flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 16px;
 `
-const linkStyle = {
-  
-}
 
 
 const Header = () => {
@@ -19,9 +17,9 @@ const Header = () => {
     <MainHeader>
       <h1>TODO List</h1>
       { location.pathname === "/" ? (
-        <Link className='add-close' style={linkStyle} to="/add">Add</Link>
+        <Link className='add-close' to="/add">Add</Link>
         ) : (  
-          <Link className='add-close' style={linkStyle} to="/">Close</Link>
+          <Link className='add-close' to="/">Close</Link>
         )
       }
     </MainHeader>

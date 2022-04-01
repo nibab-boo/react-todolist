@@ -31,4 +31,19 @@
       
     }
   }
+
+  .form-box {
+    padding: 0 24px 24px 0;
+    .input-box {
+      padding: 4px 0;
+      background-color: red;
+      width: 300px;
+    }
+    label {
+      display: block;
+    }
+    input {
+      width: 300px;
+    }
+  }
 }

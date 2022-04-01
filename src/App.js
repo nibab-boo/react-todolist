@@ -8,7 +8,7 @@ import Cards from "./components/Cards"
 import Form from './components/Form';
 // import styling
 import './styles/App.scss'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
