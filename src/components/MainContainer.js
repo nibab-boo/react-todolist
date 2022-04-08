@@ -88,7 +88,7 @@ const MainContainer = () => {
                   submitTodo= {onSubmit}
                 />
                 }/>
-              <Route path="/react-todolist/" exact element={
+              <Route path="/react-todolist" exact element={
                 <>
                   { todos.length > 0 ? (
                     < Cards todos= { todos } onDone={ clickDone } onDelete={ clickDelete }/>
